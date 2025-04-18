@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile Setup</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./profile-setup.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
@@ -12,59 +12,96 @@
   </head>
 
   <body>
-    <div class="page-container">
+    <div class="gradient-bg"></div>
+
+    <div class="container">
       <!-- Header -->
-      <header class="header">
-        <h1>Profile Setup</h1>
+      <header class="header glass">
+        <h1>🧑‍💼 Profile Setup</h1>
         <nav>
-          <a href="discover.html">Back to Discover</a>
-          <button id="delete-btn" class="nav-link">
-            <i class="fa-solid fa-ban"></i> Delete Account
+          <a href="discover.html" class="btn outline">
+            <i class="fa-solid fa-arrow-left"></i> Discover
+          </a>
+          <button id="delete-btn" class="btn danger">
+            <i class="fa-solid fa-ban"></i> Delete
           </button>
         </nav>
+        <div class="theme-toggle">
+          <i class="fa-solid fa-moon"></i>
+          <label class="switch">
+            <input type="checkbox" id="theme-switch" />
+            <span class="slider round"></span>
+          </label>
+          <i class="fa-solid fa-sun"></i>
+        </div>
       </header>
 
       <!-- Main -->
-      <main class="profile">
-        <form id="profile-form">
-          <label for="role">Role:</label>
-          <select id="role" required>
-            <option value="mentor">Mentor</option>
-            <option value="mentee">Mentee</option>
-          </select>
-          <label for="skills">Skills:</label>
-          <input
-            type="text"
-            id="skills"
-            placeholder="e.g., JavaScript, Python"
-            required
-          />
-          <label for="interests">Interests:</label>
-          <input
-            type="text"
-            id="interests"
-            placeholder="e.g., AI, Web Development"
-            required
-          />
-          <label for="bio">Bio:</label>
-          <textarea
-            id="bio"
-            placeholder="Tell us about yourself"
-            required
-          ></textarea>
-          <button type="submit">Save Profile</button>
-          <p id="profile-status"></p>
+      <main class="main glass">
+        <form id="profile-form" class="form">
+          <h2>Create Your Identity</h2>
+
+          <div class="form-group">
+            <label for="role">I'm a</label>
+            <select id="role" required>
+              <option value="">Choose your role</option>
+              <option value="mentor">Mentor</option>
+              <option value="mentee">Mentee</option>
+            </select>
+            <small>Mentors share, mentees grow 🌱</small>
+          </div>
+
+          <div class="form-group">
+            <label for="skills">Skills</label>
+            <input
+              type="text"
+              id="skills"
+              placeholder="e.g., React, Data Science"
+              required
+            />
+            <small>Your top tech stack 💪</small>
+          </div>
+
+          <div class="form-group">
+            <label for="interests">Interests</label>
+            <input
+              type="text"
+              id="interests"
+              placeholder="e.g., AI, Startups"
+              required
+            />
+            <small>What excites you? 💡</small>
+          </div>
+
+          <div class="form-group">
+            <label for="bio">Short Bio</label>
+            <textarea
+              id="bio"
+              rows="4"
+              placeholder="Tell your story..."
+              required
+            ></textarea>
+            <small>Let others know your vibe ✨</small>
+          </div>
+
+          <button type="submit" class="btn primary full">Save Profile</button>
+          <p id="profile-status" class="status-msg"></p>
         </form>
       </main>
 
       <!-- Footer -->
-      <footer class="footer">
-        <p>© 2024 Mentorship Matching Platform. All rights reserved.</p>
+      <footer class="footer glass">
+        <p>© 2024 Mentorship Platform · Designed with 💜</p>
       </footer>
     </div>
 
     <script src="./scripts.js"></script>
     <script>
+      //dark mode
+      const switchToggle = document.getElementById("theme-switch");
+      switchToggle.addEventListener("change", () => {
+        document.body.classList.toggle("light-theme");
+      });
       // Middleware to protect routes
       function protectRoute() {
         const token = localStorage.getItem("token");
