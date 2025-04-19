@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1e1f25, #2c2e34);
+    color: #f1f1f1;
+  }
+  
+  .page-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+    color: #fff;
+  }
+  
+  .nav-link {
+    background: #3a3b40;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  .nav-link:hover {
+    background: #52545a;
+  }
+  
+  .hero-section {
+    background: #2a2b30;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 2rem 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  #filter-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  
+  #filter-form label {
+    font-weight: bold;
+    margin-top: 0.5rem;
+    display: block;
+  }
+  
+  #filter-form input,
+  #filter-form select {
+    width: 95%;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    border: none;
+    background: #404147;
+    color: #fff;
+  }
+  
+  .btn {
+    background: #00c2ff;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: #00a6dc;
+  }
+  
+  h2 {
+    margin-top: 3rem;
+    font-size: 1.6rem;
+    color: #00c2ff;
+  }
+  
+  .scroll-row {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.2rem;
+    padding: 1rem 0;
+  }
+  
+  .user-card {
+    min-width: 280px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+  }
+  
+  .user-card h3 {
+    margin: 0;
+    color: #fff;
+  }
+  
+  .user-card p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  
+  .send-request-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #00c2ff;
+    color: #000;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+    opacity: 0.6;
+  }
+  
+  @media (max-width: 600px) {
+    .scroll-row {
+      flex-direction: column;
+    }
+    .user-card {
+      min-width: 100%;
+    }
+  }
+  
